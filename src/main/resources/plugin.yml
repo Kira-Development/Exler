@@ -1,0 +1,4 @@
+name: Exler
+version: '${project.version}'
+main: xyz.kiradev.exler.Exler
+author: Kira Development Team
