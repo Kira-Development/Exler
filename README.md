@@ -7,3 +7,7 @@ the loader uses Bukkit.getPluginManager().loadPlugin(tempFile) to load the plugi
 
 # why i open sourced this
 idk i just wanted to open source it on skibidi
+
+# TOS
+- If you wanna sell a forked version of this base you must gain permission from either "vifez" or "DevMatt_"
+- You MUST provide credits to "Kira Development" for usage of this base.
