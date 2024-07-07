@@ -1,13 +1,6 @@
-package xyz.kiradev.exler.loader;
+// MAKE SURE TO READ THE TOS / LICENSE AT THE REPOSITORY - https://github.com/Kira-Development/Exler
 
-/*
- *
- * Exler is a property of Kira-Development-Team
- * It was created @ 28/10/2023
- * Coded by the founders of Kira-Development-Team
- * EmpireMTR & Vifez
- *
- */
+package xyz.kiradev.exler.loader;
 
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -19,9 +12,13 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Getter
 public class ExlerLoader {
+
+    private static final Logger LOGGER = Logger.getLogger(ExlerLoader.class.getName());
 
     private final Exler exler;
     private File tempFile;
@@ -29,17 +26,26 @@ public class ExlerLoader {
     public ExlerLoader(Exler exler) {
         this.exler = exler;
     }
-    public void loadPlugin(String pluginName, String URL) {
+
+    public void loadPlugin(String pluginName, String urlString) {
         try {
-            java.net.URL url = new URL(URL);
+            URL url = new URL(urlString);
+            tempFile = File.createTempFile(pluginName, ".jar");
             try (InputStream in = url.openStream()) {
-                tempFile = File.createTempFile(pluginName, ".jar");
                 Files.copy(in, tempFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                Plugin plugin = Bukkit.getPluginManager().loadPlugin(tempFile);
-                Bukkit.getPluginManager().enablePlugin(plugin);
             }
+
+            Plugin plugin = Bukkit.getPluginManager().loadPlugin(tempFile);
+            if (plugin != null) {
+                Bukkit.getPluginManager().enablePlugin(plugin);
+                LOGGER.log(Level.INFO, "Successfully loaded: {0}", pluginName);
+            } else {
+                LOGGER.log(Level.SEVERE, "Failed to load: {0}", pluginName);
+            }
+
         } catch (Exception e) {
-            e.printStackTrace();
+                LOGGER.log(Level.SEVERE, "A unexpected error has occured while trying to load: " + pluginName, e);
         }
     }
 }
+// MAKE SURE TO READ THE TOS / LICENSE AT THE REPOSITORY - https://github.com/Kira-Development/Exler

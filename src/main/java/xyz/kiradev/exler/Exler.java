@@ -1,3 +1,5 @@
+// MAKE SURE TO READ THE TOS / LICENSE AT THE REPOSITORY - https://github.com/Kira-Development/Exler
+
 package xyz.kiradev.exler;
 
 /*
@@ -51,3 +53,5 @@ public final class Exler extends JavaPlugin {
         saveDefaultConfig();
     }
 }
+
+// MAKE SURE TO READ THE TOS / LICENSE AT THE REPOSITORY - https://github.com/Kira-Development/Exler
