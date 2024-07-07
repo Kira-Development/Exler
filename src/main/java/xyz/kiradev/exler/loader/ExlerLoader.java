@@ -44,7 +44,7 @@ public class ExlerLoader {
             }
 
         } catch (Exception e) {
-                LOGGER.log(Level.SEVERE, "A unexpected error has occured while trying to load: " + pluginName, e);
+                LOGGER.log(Level.SEVERE, "An unexpected error has occured while trying to load: " + pluginName, e);
         }
     }
 }

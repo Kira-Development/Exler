@@ -3,12 +3,10 @@
 package xyz.kiradev.exler;
 
 /*
- *
  * Exler is a property of Kira-Development-Team
  * It was created @ 28/10/2023
  * Coded by the founders of Kira-Development-Team
  * EmpireMTR & Vifez
- *
  */
 
 import lombok.Getter;
