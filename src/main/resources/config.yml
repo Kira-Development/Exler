@@ -8,9 +8,4 @@
 # Kira Development plugin Loader - https://kiradev.xyz
 
 LICENSE: 'XXXX-XXXX-XXXX-XXXX' # Put your license here
-
-# Available Products: Vitality, SoupPvP.
-# Put the product you are trying to load in here,
-# If you do not have a license it will not load.
-# NOTE: Capitalized letters are important!
 Products: []
